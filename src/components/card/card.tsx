@@ -1,4 +1,4 @@
-import { Icon } from "@/components/icon";
+import { Icon } from "@/components/base/icon";
 
 export interface ICard {
   icon: Icon;

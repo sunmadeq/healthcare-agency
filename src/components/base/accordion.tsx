@@ -70,7 +70,7 @@ export const Item = React.forwardRef<
 >(({ id, ...props }, ref) => {
   return (
     <AccordionItemContext.Provider value={{ id }}>
-      <div className="accordion__item" ref={ref} {...props} />;
+      <div className="accordion__item" ref={ref} {...props} />
     </AccordionItemContext.Provider>
   );
 });
