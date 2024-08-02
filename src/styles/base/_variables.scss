@@ -1,0 +1,87 @@
+$colors: (
+  "absolute": (
+    white: #FFFFFF,
+    black: #000000,
+  ),
+  "lime": (
+    50: #FDFEFB,
+    100: #FAFDF2,
+    200: #F6FBE9,
+    300: #EEF8D3,
+    400: #E5F5BD,
+    500: #DCF1A7,
+    600: #D3EE91,
+    700: #CBEA7B,
+    800: #BEF264,
+    900: #BBF344,
+  ),
+  "teal": (
+    50: #F0FDFA,
+    100: #F0FDF4,
+    200: #DDEDE8,
+    300: #BCDCD1,
+    400: #79B9A4,
+    500: #468671,
+    600: #346454,
+    700: #2C5446,
+    800: #234338,
+    900: #1A3129,
+  ),
+  "gray": (
+    50: #FCFCFC,
+    100: #F7F7F7,
+    200: #F2F2F2,
+    300: #E6E6E6,
+    400: #98989A,
+    500: #656567,
+    600: #59595A,
+    700: #4C4C4D,
+    800: #333333,
+    900: #262626,
+  )
+);
+
+$radiuses: (
+  "mn": 0,
+  "xs": 4px,
+  "sm": 6px,
+  "md": 8px,
+  "lg": 10px,
+  "xl": 12px,
+  "mx": 100%
+);
+
+$breakpoints: (
+  "sm": 0,
+  "md": 1440px,
+  "lg": 1920px
+);
+
+$weights: (
+  "regular": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "extrabold": 800,
+  "black": 900
+);
+
+$heights: (
+  "xs": 0.875,
+  "sm": 1,
+  "md": 1.5,
+  "lg": 2,
+  "xl": 2.125
+);
+
+$images: (
+  "abstract": (
+    "path": "/abstract/path.svg",
+    "grid": "/abstract/grid.svg",
+    "leaf": "/abstract/leaf.svg",
+  ),
+  "background": (
+    "grid": "/backgrounds/grid.png",
+    "woman": "/backgrounds/woman.png",
+  )
+);

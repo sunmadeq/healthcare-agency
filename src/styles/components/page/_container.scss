@@ -1,0 +1,21 @@
+@use "src/styles/utilities";
+
+.container {
+  @include utilities.base() {
+    margin-inside: auto;
+    max-width: 1920px;
+    width: 100%;
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding-inline: 16px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding-inline: 80px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding-inline: 160px;
+  }
+}

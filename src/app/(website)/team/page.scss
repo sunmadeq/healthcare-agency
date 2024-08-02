@@ -1,0 +1,19 @@
+@use "src/styles/utilities";
+
+.experts {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 20px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 30px;
+  }
+
+  @include utilities.breakpoint("md") {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

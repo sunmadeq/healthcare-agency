@@ -1,0 +1,271 @@
+@use "src/styles/utilities";
+
+.plan {
+  @include utilities.base() {
+    display: grid;
+    height: max-content;
+
+    background: utilities.color("lime", 200);
+    border: utilities.border("lime", 300);
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 30px;
+    gap: 24px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 40px;
+    gap: 30px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 50px;
+    gap: 40px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+  }
+}
+
+.plan__head {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 2px;
+  }
+}
+
+.plan__name {
+  @include utilities.base() {
+    font-weight: utilities.weight("semibold");
+    color: utilities.color("gray", 900);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 22px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 24px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 30px;
+  }
+}
+
+.plan__note {
+  @include utilities.base() {
+    font-weight: utilities.weight("medium");
+    color: utilities.color("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 14px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 18px;
+  }
+}
+
+.plan__body {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 20px;
+  }
+}
+
+.plan__text {
+  @include utilities.base() {
+    font-weight: utilities.weight("medium");
+    color: utilities.color("gray", 900);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 14px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 18px;
+  }
+}
+
+.plan__list {
+  @include utilities.base() {
+    background: utilities.color("lime", 300);
+    border: utilities.border("lime", 400);
+  }
+
+  @include utilities.children() {
+    & > * + * {
+      border-top: utilities.border("lime", 400);
+    }
+
+    & > p {
+      @include utilities.base() {
+        font-weight: utilities.weight("medium");
+        color: utilities.color("gray", 800);
+      }
+
+      @include utilities.breakpoint("sm") {
+        padding: 14px 18px;
+        font-size: 14px;
+      }
+
+      @include utilities.breakpoint("md") {
+        padding: 16px 20px;
+        font-size: 16px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        padding: 20px 24px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 6px;
+  }
+
+  @include utilities.breakpoint("md") {
+    border-radius: 8px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 10px;
+  }
+}
+
+.plan__best {
+  @include utilities.base() {
+    font-weight: utilities.weight("medium");
+    background: utilities.color("teal", 800);
+    color: utilities.color("absolute", white);
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 6px;
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+
+  @include utilities.breakpoint("md") {
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("md") {
+    border-radius: 10px;
+    padding: 20px 24px;
+    font-size: 18px;
+  }
+}
+
+.plan__foot {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 24px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 32px;
+  }
+}
+
+.plan__cost {
+  @include utilities.base() {
+    display: flex;
+    align-items: center;
+  }
+
+  @include utilities.children() {
+    & > :first-child {
+      @include utilities.base() {
+        font-weight: utilities.weight("bold");
+        line-height: utilities.height("xs");
+        color: utilities.color("teal", 700);
+      }
+
+      @include utilities.breakpoint("sm") {
+        font-size: 40px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        font-size: 50px;
+      }
+    }
+
+    & > :last-child {
+      @include utilities.base() {
+        font-weight: utilities.weight("medium");
+        line-height: utilities.height("md");
+        color: utilities.color("gray", 800);
+      }
+
+      @include utilities.breakpoint("sm") {
+        font-size: 16px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        font-size: 18px;
+      }
+    }
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 2px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 4px;
+  }
+}
+
+.plan__pick {
+  @include utilities.base() {
+    font-weight: utilities.weight("semibold");
+    background: utilities.color("lime", 700);
+    color: utilities.color("gray", 900);
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 14px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 18px 40px;
+    border-radius: 8px;
+    font-size: 18px;
+  }
+}

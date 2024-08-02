@@ -1,0 +1,105 @@
+@use "src/styles/utilities";
+
+.expert {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.children() {
+    & > * + * {
+      margin-top: -50px;
+    }
+  }
+}
+
+.expert__image {
+  @include utilities.base() {
+    display: grid;
+    place-content: center;
+
+    background: utilities.public("/abstract/raster/grid.png") center / cover,
+    utilities.color("lime", 700);
+  }
+
+  @include utilities.children() {
+    img {
+      @include utilities.base() {
+        object-fit: contain;
+        object-position: bottom;
+      }
+
+      @include utilities.breakpoint("sm") {
+        height: 380px;
+      }
+
+      @include utilities.breakpoint("md") {
+        height: 340px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        height: 400px;
+      }
+    }
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 8px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+  }
+}
+
+.expert__badge {
+  @include utilities.base() {
+    display: grid;
+    background: utilities.color("lime", 200);
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-top-right-radius: 20px;
+    padding: 20px;
+    width: 75%;
+    gap: 2px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-top-right-radius: 24px;
+    padding: 30px;
+    width: 60%;
+    gap: 4px;
+  }
+}
+
+.expert__name {
+  @include utilities.base() {
+    font-weight: utilities.weight("semibold");
+    color: utilities.color("gray", 900);
+    line-height: 28px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 20px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 24px;
+  }
+}
+
+.expert__role {
+  @include utilities.base() {
+    font-weight: utilities.weight("medium");
+    color: utilities.color("gray", 700);
+    line-height: 24px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 18px;
+  }
+}

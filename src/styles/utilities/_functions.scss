@@ -1,0 +1,33 @@
+@use "src/styles/base/variables" as *;
+
+@function radius($radius) {
+  @return map-get($radiuses, $radius);
+}
+
+@function color($color, $shade) {
+  @return map-get(map-get($colors, $color), $shade);
+}
+
+@function border($color, $shade) {
+  @return 1px solid color($color, $shade);
+}
+
+@function outline($color, $shade) {
+  @return 1px solid color($color, $shade);
+}
+
+@function image-url($path) {
+  @return url($path);
+}
+
+@function public($path) {
+  @return url($path);
+}
+
+@function weight($weight) {
+  @return map-get($weights, $weight);
+}
+
+@function height($height) {
+  @return map-get($heights, $height);
+}

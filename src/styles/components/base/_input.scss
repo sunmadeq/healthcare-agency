@@ -1,0 +1,22 @@
+@use "src/styles/utilities";
+
+input {
+  @include utilities.base() {
+    background: utilities.color("lime", 300);
+    border: utilities.border("lime", 500);
+    color: utilities.color("gray", 500);
+    font-weight: utilities.weight("medium");
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 6px;
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 8px;
+    padding: 24px;
+    font-size: 18px;
+  }
+}

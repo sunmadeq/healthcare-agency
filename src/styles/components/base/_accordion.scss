@@ -1,0 +1,149 @@
+@use "src/styles/utilities";
+
+.accordion {
+  @include utilities.base() {
+    display: grid;
+
+    background: utilities.color("lime", 200);
+    border: utilities.border("lime", 400);
+  }
+
+  @include utilities.children() {
+    & > * {
+      padding-block: 20px;
+    }
+
+    & > :first-child {
+      padding-top: 0;
+    }
+
+    & > :last-child {
+      padding-bottom: 0;
+    }
+
+    & > * + * {
+      border-top: utilities.border("lime", 400);
+    }
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 30px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 50px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 60px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+  }
+}
+
+.accordion__item {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 12px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 14px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 16px;
+  }
+}
+
+.accordion__head {
+  @include utilities.base() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.accordion__title {
+  @include utilities.base() {
+    font-weight: utilities.weight("semibold");
+    color: utilities.color("gray", 900);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 18px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 20px;
+  }
+}
+
+.accordion__trigger {
+  @include utilities.base() {
+    display: grid;
+    place-content: center;
+
+    background: utilities.color("teal", 800);
+  }
+
+  @include utilities.children() {
+    svg {
+      @include utilities.base() {
+        color: utilities.color("absolute", white);
+      }
+
+      @include utilities.breakpoint("sm") {
+        width: 20px;
+        height: 20px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 6px;
+    padding: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 8px;
+    padding: 12px;
+  }
+}
+
+.accordion__body {
+  @include utilities.base() {
+    font-weight: utilities.weight("medium");
+    color: utilities.color("gray", 800);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 14px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 18px;
+  }
+}

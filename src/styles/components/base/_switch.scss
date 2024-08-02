@@ -1,0 +1,125 @@
+@use "src/styles/utilities";
+
+.switch {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 30px;
+  }
+
+  @include utilities.breakpoint("md") {
+    gap: 40px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 50px;
+  }
+}
+
+.switch__body {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 20px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 30px;
+  }
+
+  @include utilities.breakpoint("md") {
+    grid-template-columns: repeat(3, 1fr);
+
+    & > *:nth-child(n + 4) {
+      display: none;
+    }
+  }
+}
+
+.switch__footer {
+  @include utilities.base() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 20px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 30px;
+  }
+}
+
+.switch__button {
+  @include utilities.base() {
+    background: utilities.color("lime", 200);
+    border: utilities.border("lime", 300);
+  }
+
+  @include utilities.children() {
+    svg {
+      @include utilities.base() {
+        color: utilities.color("gray", 800);
+      }
+
+      @include utilities.breakpoint("sm") {
+        width: 28px;
+        height: 28px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        width: 34px;
+        height: 34px;
+      }
+    }
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 6px;
+    padding: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 8px;
+    padding: 12px;
+  }
+}
+
+.switch__pages {
+  @include utilities.base() {
+    display: flex;
+    gap: 4px;
+  }
+}
+
+.switch__pages > div {
+  @include utilities.base() {
+    border-radius: 100%;
+  }
+
+  @include utilities.children() {
+    &[data-active=true] {
+      background: utilities.color("teal", 600);
+    }
+
+    &[data-active=false] {
+      background: utilities.color("lime", 400);
+    }
+  }
+
+  @include utilities.breakpoint("sm") {
+    width: 6px;
+    height: 6px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    width: 8px;
+    height: 8px;
+  }
+}

@@ -1,0 +1,128 @@
+@use "src/styles/utilities" as utilities;
+
+.link {
+  @include utilities.base() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: utilities.weight("semibold");
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: utilities.radius("sm");
+    font-size: 14px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: utilities.radius("md");
+    font-size: 18px;
+  }
+}
+
+/* Type */
+
+.link--solid {
+  background: utilities.color("lime", 700);
+  color: utilities.color("gray", 900);
+}
+
+.link--light {
+  background: utilities.color("lime", 200);
+  border: utilities.border("lime", 400);
+  color: utilities.color("gray", 900);
+}
+
+.link--ghost {
+  color: utilities.color("lime", 700);
+}
+
+/* Size */
+
+.link--sm {
+  @include utilities.breakpoint("sm") {
+    height: 40px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    height: 48px;
+  }
+}
+
+.link--md {
+  @include utilities.breakpoint("sm") {
+    height: 44px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    height: 56px;
+  }
+}
+
+.link--lg {
+  @include utilities.breakpoint("sm") {
+    height: 48px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    height: 60px;
+  }
+}
+
+/* Padding */
+
+.link--px-xs {
+  @include utilities.breakpoint("sm") {
+    padding-inline: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding-inline: 20px;
+  }
+}
+
+.link--px-sm {
+  @include utilities.breakpoint("sm") {
+    padding-inline: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding-inline: 24px;
+  }
+}
+
+.link--px-md {
+  @include utilities.breakpoint("sm") {
+    padding-inline: 20px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding-inline: 24px;
+  }
+}
+
+.link--px-lg {
+  @include utilities.breakpoint("sm") {
+    padding-inline: 20px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding-inline: 28px;
+  }
+}
+
+.link--px-xl {
+  @include utilities.breakpoint("sm") {
+    padding-inline: 24px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding-inline: 40px;
+  }
+}
+
+/* Aspect */
+
+.link--square {
+  aspect-ratio: 1 / 1;
+}

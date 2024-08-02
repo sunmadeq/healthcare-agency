@@ -1,0 +1,161 @@
+@use "src/styles/utilities";
+
+.step {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.children() {
+    & > * + * {
+      @include utilities.breakpoint("sm") {
+        margin-top: -48px;
+      }
+
+      @include utilities.breakpoint("sm") {
+        margin-top: -58px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        margin-top: -90px;
+      }
+    }
+  }
+}
+
+.step__item {
+  @include utilities.base() {
+    font-weight: utilities.weight("bold");
+    color: utilities.color("teal", 500);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 80px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 100px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 150px;
+  }
+}
+
+.step__card {
+  @include utilities.base() {
+    display: grid;
+
+    background: utilities.color("lime", 200);
+    border: utilities.border("lime", 400);
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 30px;
+    gap: 16px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 40px;
+    gap: 20px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 50px;
+    gap: 24px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+  }
+}
+
+.step__head {
+  @include utilities.base() {
+    display: flex;
+    align-items: center;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 14px;
+  }
+}
+
+.step__icon {
+  @include utilities.base() {
+    background: utilities.color("lime", 700);
+  }
+
+  @include utilities.children() {
+    svg {
+      @include utilities.base() {
+        color: utilities.color("gray", 900);
+      }
+
+      @include utilities.breakpoint("sm") {
+        width: 26px;
+        height: 26px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        width: 34px;
+        height: 34px;
+      }
+    }
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 6px;
+    padding: 14px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 8px;
+    padding: 16px;
+  }
+}
+
+.step__name {
+  @include utilities.base() {
+    font-weight: utilities.weight("semibold");
+    color: utilities.color("gray", 900);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 18px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 20px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 24px;
+  }
+}
+
+.step__text {
+  @include utilities.base() {
+    font-weight: utilities.weight("medium");
+    color: utilities.color("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 14px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 18px;
+  }
+}

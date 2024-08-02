@@ -1,0 +1,206 @@
+@use "src/styles/utilities";
+
+table {
+  @include utilities.base() {
+    overflow-x: scroll;
+    display: grid;
+
+    background: utilities.color("lime", 200);
+    border: utilities.border("lime", 400);
+  }
+
+  @include utilities.children() {
+    scrollbar-color: utilities.color("lime", 700) transparent;
+    scrollbar-width: thin;
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 30px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 40px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 50px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+  }
+}
+
+tr {
+  @include utilities.base() {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+thead tr {
+  @include utilities.children() {
+    & > * {
+      padding-inline: 30px;
+    }
+
+    & > * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    & > :first-child {
+      justify-content: start;
+      text-align: start;
+    }
+
+    & > :first-child {
+      padding-left: 0;
+    }
+
+    & > :last-child {
+      padding-right: 0;
+    }
+
+    & > * + * {
+      border-left: utilities.border("lime", 500);
+    }
+  }
+}
+
+th p {
+  @include utilities.base() {
+    width: 100%;
+    background: utilities.color("teal", 800);
+    color: utilities.color("absolute", white);
+    font-weight: utilities.weight("medium");
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 18px;
+    padding: 14px 20px;
+    border-radius: 6px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 20px;
+    padding: 16px 24px;
+    border-radius: 8px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 22px;
+    padding: 20px 30px;
+    border-radius: 10px;
+  }
+}
+
+tbody {
+  @include utilities.children() {
+    & > * + * {
+      border-top: utilities.border("lime", 500);
+    }
+  }
+}
+
+tbody tr {
+  @include utilities.children() {
+    & > * {
+      @include utilities.breakpoint("sm") {
+        padding: 30px 20px;
+      }
+
+      @include utilities.breakpoint("sm") {
+        padding: 40px 24px;
+      }
+
+      @include utilities.breakpoint("sm") {
+        padding: 50px 30px;
+      }
+    }
+
+    & > :first-child {
+      padding-left: 0;
+    }
+
+    & > :last-child {
+      padding-right: 0;
+    }
+
+    & > * + * {
+      border-left: utilities.border("lime", 500);
+    }
+  }
+}
+
+tbody tr p {
+  @include utilities.base() {
+    font-weight: utilities.weight("medium");
+    color: utilities.color("gray", 900);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 18px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 20px;
+  }
+}
+
+tbody tr td:not(:first-child) {
+  display: grid;
+  place-content: center;
+}
+
+tbody tr svg {
+  @include utilities.base() {
+    box-sizing: content-box;
+    color: utilities.color("gray", 900);
+  }
+
+  @include utilities.breakpoint("sm") {
+    width: 18px;
+    height: 18px;
+  }
+
+  @include utilities.breakpoint("md") {
+    width: 20px;
+    height: 20px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    width: 24px;
+    height: 24px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 6px;
+    border-radius: 6px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  @include utilities.children() {
+    &[data-active=true] {
+      background: utilities.color("lime", 700);
+    }
+
+    &[data-active=false] {
+      background: utilities.color("lime", 300);
+    }
+  }
+}

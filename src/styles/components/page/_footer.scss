@@ -1,0 +1,242 @@
+@use "src/styles/utilities";
+
+.footer {
+  @include utilities.base() {
+    display: grid;
+    background: utilities.color("teal", 900);
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding-block: 30px;
+    gap: 30px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding-block: 40px;
+    gap: 40px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding-block: 50px;
+    gap: 50px;
+  }
+}
+
+.footer__upper {
+  @include utilities.base() {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 20px;
+  }
+}
+
+.footer__stripe {
+  @include utilities.base() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.footer__logotype {
+  @include utilities.breakpoint("sm") {
+    width: 130px;
+    height: 30px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    width: 200px;
+    height: 45px;
+  }
+}
+
+.footer__anchor {
+  @include utilities.base() {
+    display: flex;
+    align-items: center;
+    color: utilities.color("absolute", white);
+    font-weight: utilities.weight("semibold");
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 6px;
+  }
+
+  @include utilities.breakpoint("md") {
+    gap: 14px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 20px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 18px;
+  }
+
+  @include utilities.children() {
+    & div {
+      @include utilities.base() {
+        background: utilities.color("teal", 800);
+        border-radius: 100%;
+      }
+
+      @include utilities.breakpoint("sm") {
+        padding: 12px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        padding: 14px;
+      }
+    }
+
+    & svg {
+      @include utilities.base() {
+        color: utilities.color("absolute", white);
+      }
+
+      @include utilities.breakpoint("sm") {
+        width: 24px;
+        height: 24px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        width: 34px;
+        height: 34px;
+      }
+    }
+  }
+}
+
+.footer__navigation {
+  @include utilities.base() {
+    display: flex;
+    flex-wrap: wrap;
+    color: utilities.color("absolute", white);
+    font-weight: utilities.weight("semibold");
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 16px;
+    font-size: 14px;
+  }
+
+  @include utilities.breakpoint("md") {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 26px;
+    font-size: 18px;
+  }
+}
+
+.footer__lower {
+  @include utilities.base() {
+    background: utilities.color("teal", 800);
+    border: utilities.border("teal", 700);
+    display: flex;
+    border-radius: 8px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  @include utilities.breakpoint("md") {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.footer__contacts {
+  @include utilities.base() {
+    display: flex;
+    color: utilities.color("absolute", white);
+  }
+
+  @include utilities.breakpoint("sm") {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  @include utilities.breakpoint("md") {
+    flex-direction: row;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 20px;
+  }
+}
+
+.footer__contacts > div {
+  @include utilities.base() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: utilities.weight("medium");
+    border: utilities.border("teal", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 12px;
+    font-size: 16px;
+    gap: 4px;
+    border-radius: 4px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 14px;
+    font-size: 18px;
+    gap: 6px;
+    border-radius: 6px;
+  }
+
+  @include utilities.children() {
+    & > svg {
+      @include utilities.base() {
+        color: utilities.color("lime", 700);
+      }
+
+      @include utilities.breakpoint("sm") {
+        width: 20px;
+        height: 20px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+.footer__copyright {
+  @include utilities.base() {
+    font-weight: utilities.weight("regular");
+    color: utilities.color("gray", 200);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 14px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 18px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    text-align: center;
+  }
+}

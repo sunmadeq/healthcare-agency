@@ -1,0 +1,18 @@
+@use "src/styles/utilities";
+
+.underline {
+  @include utilities.base() {
+    text-decoration: underline;
+    text-decoration-color: utilities.color("lime", 700);
+    text-decoration-thickness: 3px;
+    text-decoration-style: solid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    text-underline-offset: 8px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    text-underline-offset: 10px;
+  }
+}
